@@ -92,8 +92,6 @@ const config: Config = {
     maxWorkers: process.env.JEST_MAX_WORKERS || (isDocker ? '100%' : '50%'),
     testTimeout: process.env.JEST_TEST_TIMEOUT ? Number(process.env.JEST_TEST_TIMEOUT) : isCi || isDocker ? 10000 : 5000,
     collectCoverage: isCi,
-    // V8 coverage is much cheaper than babel-plugin-istanbul instrumentation on top of @swc/jest
-    coverageProvider: 'v8',
     clearMocks: true,
     restoreMocks: true,
     moduleFileExtensions: [
